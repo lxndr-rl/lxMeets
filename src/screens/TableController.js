@@ -71,24 +71,20 @@ export default class TableController extends Component {
     fetch('https://lxmeets.lxndr.dev/latest.php')
       .then(res => res.json())
       .then(resJson => {
-        if (
-          resJson.target.includes(Platform.OS) ||
-          resJson.target.includes('all')
-        ) {
-          if (resJson.latest > ver.actual) {
-            Alert.alert(
-              resJson.type,
-              resJson.cambios,
-              [
-                {
-                  text: resJson.okMensaje,
-                  onPress: () => Linking.openURL(resJson.URL),
-                },
-                {text: resJson.cancelMensaje, onPress: () => null},
-              ],
-              {cancelable: true},
-            );
-          }
+        const json = resJson[Platform.OS];
+        if (json.latest > ver.actual) {
+          Alert.alert(
+            json.type,
+            json.cambios,
+            [
+              {
+                text: json.okMensaje,
+                onPress: () => Linking.openURL(json.URL),
+              },
+              {text: json.cancelMensaje, onPress: () => null},
+            ],
+            {cancelable: true},
+          );
         }
       })
       .catch(error => {
