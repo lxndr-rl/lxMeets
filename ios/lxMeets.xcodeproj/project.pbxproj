@@ -8,28 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* lxMeetsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* lxMeetsTests.m */; };
-		01A16A3503CE4928870A1611 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0FBA2E74C324EEC95998DB2 /* FontAwesome5_Regular.ttf */; };
-		0D9D2546541E40F9A51D4D09 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 887AF7C9B4AF46BEA502D67E /* Ionicons.ttf */; };
-		113B5535F555463187178C17 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DC74EF18318489AAC2F0BA7 /* Zocial.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3770DB3E87A94DA08381EEC3 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57C5766233024F4F9E9A42E2 /* AntDesign.ttf */; };
-		3A5D78642CDB49D28FD767AE /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E009F75FB07541B88371B01E /* SimpleLineIcons.ttf */; };
-		4975300AA18C401C80086C20 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0E9AC95B72A142038727BAAA /* MaterialCommunityIcons.ttf */; };
-		5F41BA452C2F49978AE4828F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5419C786B1764150BF704D0F /* MaterialIcons.ttf */; };
-		630A17CD32D64616AE6314C8 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAA6F780509F4C6CB98EF7F3 /* EvilIcons.ttf */; };
-		7F3FE90BA51A430DBFAB909F /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25FBCA7C63724112BD49A694 /* Foundation.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8FD5ABB45EBA4961900A9E0F /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C017F616B12349F1805C4ADC /* Fontisto.ttf */; };
-		984F60BBE2864170ACFE6CB6 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E969ABB8AB004F27B4262BD5 /* FontAwesome.ttf */; };
-		A161F83B13DB458595C02C1C /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F843A89B9FFD4776B5409867 /* FontAwesome5_Solid.ttf */; };
 		ACC70DA1E4D2F8D5A18125B8 /* libPods-lxMeets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9854DC1C4311F9DC43AA7482 /* libPods-lxMeets.a */; };
 		B8426B4E56F36FE28F05B1B0 /* libPods-lxMeets-lxMeetsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D757C008B2F18C4F302BFFB1 /* libPods-lxMeets-lxMeetsTests.a */; };
-		CA4790F914DA4517B7510314 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C00622A6EA444D9B8810D59 /* Feather.ttf */; };
-		DDD0C97B8F7947439F8FBCAF /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CFDD8FC37F749D78187C54D /* Entypo.ttf */; };
-		E3AA6386426747B58416B858 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DECF40FB80D3449998D0DBB6 /* Octicons.ttf */; };
-		F741A5CF53D449CFB47CDE15 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54325BF3F9E84C979E414626 /* FontAwesome5_Brands.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,22 +284,6 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				3770DB3E87A94DA08381EEC3 /* AntDesign.ttf in Resources */,
-				DDD0C97B8F7947439F8FBCAF /* Entypo.ttf in Resources */,
-				630A17CD32D64616AE6314C8 /* EvilIcons.ttf in Resources */,
-				CA4790F914DA4517B7510314 /* Feather.ttf in Resources */,
-				984F60BBE2864170ACFE6CB6 /* FontAwesome.ttf in Resources */,
-				F741A5CF53D449CFB47CDE15 /* FontAwesome5_Brands.ttf in Resources */,
-				01A16A3503CE4928870A1611 /* FontAwesome5_Regular.ttf in Resources */,
-				A161F83B13DB458595C02C1C /* FontAwesome5_Solid.ttf in Resources */,
-				8FD5ABB45EBA4961900A9E0F /* Fontisto.ttf in Resources */,
-				7F3FE90BA51A430DBFAB909F /* Foundation.ttf in Resources */,
-				0D9D2546541E40F9A51D4D09 /* Ionicons.ttf in Resources */,
-				4975300AA18C401C80086C20 /* MaterialCommunityIcons.ttf in Resources */,
-				5F41BA452C2F49978AE4828F /* MaterialIcons.ttf in Resources */,
-				E3AA6386426747B58416B858 /* Octicons.ttf in Resources */,
-				3A5D78642CDB49D28FD767AE /* SimpleLineIcons.ttf in Resources */,
-				113B5535F555463187178C17 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,7 +536,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.lxndr.lxmeets;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.lxndr.lxMeets;
 				PRODUCT_NAME = lxMeets;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -594,7 +562,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.lxndr.lxmeets;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.lxndr.lxMeets;
 				PRODUCT_NAME = lxMeets;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
