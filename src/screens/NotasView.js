@@ -109,7 +109,7 @@ export default Main = ({route}) => {
           <ScrollView horizontal={true}>
             <Table borderStyle={{borderWidth: 3, borderColor: '#934f96'}}>
               <Row
-                data={headerPromedio}
+                data={headerParciales}
                 widthArr={[90, 90, 300, 90]}
                 textStyle={{
                   color: 'white',
@@ -119,7 +119,7 @@ export default Main = ({route}) => {
                 }}
               />
               <Rows
-                data={promedios}
+                data={parciales}
                 widthArr={[90, 90, 300, 90]}
                 textStyle={{
                   color: 'white',
