@@ -9,6 +9,11 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "homepage": "/app/",
+  "author": {
+    "name": "lxndr",
+    "web": "https://lxmeets.lxndr.dev"
+  },
   "dependencies": {
     "@react-native-picker/picker": "1.16.1",
     "@react-navigation/native": "^6.0.6",
