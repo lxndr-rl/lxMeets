@@ -147,6 +147,8 @@ const HomeScreen = ({ navigation }) => {
             borderRadius: 5,
             flexShrink: 1,
             marginBottom: 8,
+            width: phoneWidth - 50,
+            alignSelf: "center",
             padding: 8,
             backgroundColor: "#171717",
           }}
@@ -154,6 +156,10 @@ const HomeScreen = ({ navigation }) => {
             borderRadius: 5,
             backgroundColor: "#171717",
             padding: 8,
+          }}
+          cancelContainerStyle={{
+            width: phoneWidth - 50,
+            alignSelf: "center",
           }}
           cancelTextStyle={{
             textAlign: "center",
@@ -202,12 +208,14 @@ const HomeScreen = ({ navigation }) => {
         showConfirmButton={true}
         cancelText="Cancelar"
         confirmText="Abrir URL"
+        cancelButtonTextStyle={{fontSize: 16}}
+        confirmButtonTextStyle={{fontSize: 16}}
         confirmButtonColor="green"
         cancelButtonColor="#DD6B55"
-        actionContainerStyle={{ backgroundColor: "#2B2B2B" }}
+        actionContainerStyle={{ backgroundColor: "#2B2B2B"}}
         contentContainerStyle={{ backgroundColor: "#2B2B2B" }}
-        titleStyle={{ color: "white" }}
-        messageStyle={{ color: "white" }}
+        titleStyle={{ color: "white", fontSize: 24, fontWeight: "bold" }}
+        messageStyle={{ color: "white", fontSize: 18 }}
         onCancelPressed={() => {
           setAlertVisible(false);
         }}
