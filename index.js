@@ -1,9 +1,5 @@
-/**
- * @format
- */
+import registerRootComponent from "expo/build/launch/registerRootComponent";
 
-import {AppRegistry} from 'react-native';
-import SplashScreen from './src/screens/SplashScreen';
-import {name as appName} from './app.json';
+import App from "./src/screens/SplashScreen";
 
-AppRegistry.registerComponent(appName, () => SplashScreen);
+registerRootComponent(App);

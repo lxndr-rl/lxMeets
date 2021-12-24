@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import ImageViewer from 'react-native-image-zoom-viewer';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import ImageViewer from "react-native-image-zoom-viewer";
 
-export default Main = () => {
+const Examen = () => {
   let images = [
     {
       url: `https://lxmeets.lxndr.dev/res/horarioex.png?f=${Math.random()}`,
@@ -21,13 +21,13 @@ export default Main = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'black',
-    justifyContent: 'center',
+    backgroundColor: "black",
+    justifyContent: "center",
   },
   view: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   text: {
     margin: 12,
@@ -39,15 +39,17 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     height: 54,
-    backgroundColor: '#000000',
+    backgroundColor: "#000000",
     margin: 12,
     borderRadius: 8,
   },
   buttonText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 18,
   },
 });
+
+export default Examen;
