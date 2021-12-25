@@ -4,7 +4,7 @@
     "slug": "lxMeets",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/lxMeets.png",
+    "icon": "./src/assets/lxMeets_square.png",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -14,12 +14,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/lxMeets.png",
+        "foregroundImage": "./src/assets/lxMeets_square.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./src/assets/lxMeets.png"
+      "favicon": "./src/assets/lxMeets_square.png"
     }
   }
 }

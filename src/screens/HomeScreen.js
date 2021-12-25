@@ -30,10 +30,10 @@ const ver = require("../version.json");
 const f = new Date();
 let index = 0;
 const dias = [
-  { key: index++, section: true, label: "Dias" },
+  { key: index++, section: true, label: "Días" },
   { key: index++, label: "Lunes" },
   { key: index++, label: "Martes" },
-  { key: index++, label: "Miercoles" },
+  { key: index++, label: "Miércoles" },
   { key: index++, label: "Jueves" },
   { key: index++, label: "Viernes" },
 ];
@@ -49,12 +49,12 @@ const HomeScreen = ({ navigation }) => {
       : f.getDay() === 2
       ? "Martes"
       : f.getDay() === 3
-      ? "Miercoles"
+      ? "Miércoles"
       : f.getDay() === 4
       ? "Jueves"
       : f.getDay() === 5
       ? "Viernes"
-      : "Sabado"
+      : "Sábado"
   );
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertData, setAlertData] = useState({});
@@ -95,7 +95,10 @@ const HomeScreen = ({ navigation }) => {
 
   const _getData = () => {
     setLoading(true);
-    fetch("https://api.lxndr.dev/uae/meets/?dia=" + dia)
+    fetch(
+      "https://api.lxndr.dev/uae/meets/?dia=" +
+        dia.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    )
       .then((res) => res.json())
       .then((resJson) => {
         setData(resJson);
@@ -133,67 +136,101 @@ const HomeScreen = ({ navigation }) => {
         hidden={false}
       />
       <View style={{ paddingTop: 30 }}>
-        <Text style={{ color: "white", alignSelf: "center", fontSize: 20, fontWeight: "bold" }}>Seleccione día</Text>
-        <ModalSelector
-          data={dias}
-          style={{ width: phoneWidth - 50, alignSelf: "center" }}
-          sectionTextStyle={{
-            color: "#BFBCBC",
-          }}
-          optionTextStyle={{
-            color: "lightblue",
-          }}
-          optionContainerStyle={{
-            borderRadius: 5,
-            flexShrink: 1,
-            marginBottom: 8,
-            width: phoneWidth - 50,
+        <Text
+          style={{
+            color: "white",
             alignSelf: "center",
-            padding: 8,
-            backgroundColor: "#171717",
+            fontSize: 20,
+            fontWeight: "bold",
           }}
-          cancelStyle={{
-            borderRadius: 5,
-            backgroundColor: "#171717",
-            padding: 8,
-          }}
-          cancelContainerStyle={{
-            width: phoneWidth - 50,
-            alignSelf: "center",
-          }}
-          cancelTextStyle={{
-            textAlign: "center",
-            color: "#BFBCBC",
-            fontSize: 16,
-          }}
-          optionStyle={{
-            padding: 8,
-            borderBottomWidth: 1,
-            borderBottomColor: "#818181",
-          }}
-          cancelText="Cancelar"
-          backdropPressToClose
-          animationType="fade"
-          initValue={dia}
-          onChange={(option) => {
-            setDia(option.label);
-            _getData();
-          }}
-        />
+        >
+          Seleccione día
+        </Text>
+        <View style={styles.selectionSection}>
+          <ModalSelector
+            data={dias}
+            style={{ width: 100, height: 40 }}
+            sectionTextStyle={{
+              color: "#BFBCBC",
+            }}
+            optionTextStyle={{
+              color: "lightblue",
+            }}
+            optionContainerStyle={{
+              borderRadius: 5,
+              flexShrink: 1,
+              marginBottom: 8,
+              width: phoneWidth - 50,
+              alignSelf: "center",
+              padding: 8,
+              backgroundColor: "#171717",
+            }}
+            cancelStyle={{
+              borderRadius: 5,
+              backgroundColor: "#171717",
+              padding: 8,
+            }}
+            cancelContainerStyle={{
+              width: phoneWidth - 50,
+              alignSelf: "center",
+            }}
+            cancelTextStyle={{
+              textAlign: "center",
+              color: "#BFBCBC",
+              fontSize: 16,
+            }}
+            optionStyle={{
+              padding: 8,
+              borderBottomWidth: 1,
+              borderBottomColor: "#818181",
+            }}
+            cancelText="Cancelar"
+            backdropPressToClose
+            animationType="fade"
+            initValue={dia}
+            onChange={(option) => {
+              setDia(option.label);
+              _getData();
+            }}
+          />
+          <TouchableOpacity
+            style={styles.reloadButton}
+            onPress={() => _getData()}
+            key={"reload"}
+          >
+            <LinearGradient
+              colors={["#2b2b2b", "#414345"]}
+              style={styles.reloadButton}
+            >
+              <Text style={styles.buttonText}>
+                <Icon name="refresh" style={styles.buttonText} />
+              </Text>
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
       </View>
       <ScrollView style={{ marginTop: 20, marginBottom: 10 }}>
         {data
-          ? data.map((item, index) => (
-              <TouchableOpacity
-                onPress={() => {
-                  pressButton(item.url, item.materia, item.hora);
-                }}
-                key={index}
-                style={{ alignSelf: "center" }}
-              >
-                <Item materia={item.materia} horas={item.hora} />
-              </TouchableOpacity>
-            ))
+          ? data.map((item, index) =>
+              item.materia === "No hay nada por ahora" ? (
+                <Icon
+                  name="smile-o"
+                  color={"white"}
+                  style={{ alignSelf: "center" }}
+                  size={40}
+                />
+              ) : (
+                <TouchableOpacity
+                  onPress={() => {
+                    pressButton(item.url, item.materia, item.hora);
+                  }}
+                  key={index}
+                  style={{ alignSelf: "center" }}
+                >
+                  <Item materia={item.materia} horas={item.hora} />
+                </TouchableOpacity>
+              )
+            )
           : null}
         {loading ? <ActivityIndicator size="large" color="white" /> : null}
       </ScrollView>
@@ -208,11 +245,11 @@ const HomeScreen = ({ navigation }) => {
         showConfirmButton={true}
         cancelText="Cancelar"
         confirmText="Abrir URL"
-        cancelButtonTextStyle={{fontSize: 16}}
-        confirmButtonTextStyle={{fontSize: 16}}
+        cancelButtonTextStyle={{ fontSize: 16 }}
+        confirmButtonTextStyle={{ fontSize: 16 }}
         confirmButtonColor="green"
         cancelButtonColor="#DD6B55"
-        actionContainerStyle={{ backgroundColor: "#2B2B2B"}}
+        actionContainerStyle={{ backgroundColor: "#2B2B2B" }}
         contentContainerStyle={{ backgroundColor: "#2B2B2B" }}
         titleStyle={{ color: "white", fontSize: 24, fontWeight: "bold" }}
         messageStyle={{ color: "white", fontSize: 18 }}
@@ -276,6 +313,22 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 18,
+  },
+  selectionSection: {
+    paddingTop: 10,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignContent: "center",
+  },
+  reloadButton: {
+    alignItems: "center",
+    alignSelf: "center",
+    justifyContent: "center",
+    height: 40,
+    margin: 5,
+    borderRadius: 8,
+    width: 40,
   },
 });
 
