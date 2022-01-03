@@ -101,6 +101,18 @@ const HomeScreen = ({ navigation }) => {
     )
       .then((res) => res.json())
       .then((resJson) => {
+        if (resJson.error) {
+          Platform.OS == "web"
+            ? alert(resJson.message)
+            : Alert.alert(
+                resJson.error,
+                resJson.message,
+                [{ text: "OK", onPress: () => null }],
+                { cancelable: true }
+              );
+          setLoading(false);
+          return;
+        }
         setData(resJson);
         setLoading(false);
       })
@@ -123,8 +135,8 @@ const HomeScreen = ({ navigation }) => {
   };
   const _goToNotas = () => {
     Platform.OS == "web"
-      ? window.open(`https://uae.lxndr.dev/`, "_blank")
-      : Linking.openURL(`https://uae.lxndr.dev/`);
+      ? window.open(`https://sicau.lxndr.dev/`, "_blank")
+      : Linking.openURL(`https://sicau.lxndr.dev/`);
   };
 
   return (
